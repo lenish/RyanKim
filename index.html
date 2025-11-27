@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Ryan Kim</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Paste the new links here -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -9,13 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Open Sans', sans-serif; /* Your nice font */
+            background-color: #f4f4f4; /* Your background color */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Allows it to grow if content is long */
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+            /* We removed 'align-items: center' and fixed height so scrolling works */
         }
         .card {
             background: white;
@@ -95,6 +97,26 @@
             font-weight: 700;
             font-size: 2.5rem; /* Makes text larger */
             margin-bottom: 10px;
+        }
+        /* --- Mobile Styles --- */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px; /* Less padding on edges */
+                width: 100%;
+            }
+            
+            .card {
+                padding: 20px; /* Smaller padding inside the profile card */
+            }
+
+            h1 {
+                font-size: 2rem; /* Slightly smaller name on phone */
+            }
+            
+            /* Make projects stack in a single column on small phones */
+            .project-grid {
+                grid-template-columns: 1fr; 
+            }
         }
     </style>
 </head>
